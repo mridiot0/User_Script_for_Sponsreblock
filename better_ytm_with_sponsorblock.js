@@ -186,13 +186,13 @@
                     noti.text = noti.text.replace("\n\u00AD\n", "\n\u00AD\nThis video has a highlight segment at " + durationString(rPoi) + ".\nClick here to skip to it.\n\u00AD\n");
                     noti.onclick = function(){ player.currentTime = rPoi; };
                 }
-                GM.notification(noti);
+                //GM.notification(noti);
             }
             const pfunc = function(){
                 if (s3settings.notifications && !!rPoi && player.currentTime < rPoi) {
                     GM.notification({
-                        title: "Point of interest found!",
-                        text: "This video has a highlight segment at " + durationString(rPoi) + ".\nClick here to skip to it.\n\u00AD\n" + document.title + " (Video ID: " + videoId + ")",
+                        //title: "Point of interest found!",
+                       // text: "This video has a highlight segment at " + durationString(rPoi) + ".\nClick here to skip to it.\n\u00AD\n" + document.title + " (Video ID: " + videoId + ")",
                         onclick: function(){ player.currentTime = rPoi; },
                         silent: true,
                         timeout: 5000,
@@ -214,8 +214,8 @@
                         player.currentTime = result[x].segment[1];
                         if (s3settings.notifications) {
                             GM.notification({
-                                title: "Skipped " + result[x].category.replace('music_offtopic','non-music').replace('selfpromo', 'self-promotion') + " segment",
-                                text: "Segment " + (x + 1) + " out of " + result.length + "\n\u00AD\n" + document.title + " (Video ID: " + videoId + ")",
+                                // title: "Skipped " + result[x].category.replace('music_offtopic','non-music').replace('selfpromo', 'self-promotion') + " segment",
+                                // text: "Segment " + (x + 1) + " out of " + result.length + "\n\u00AD\n" + document.title + " (Video ID: " + videoId + ")",
                                 silent: true,
                                 timeout: 5000,
                                 image: favicon,
